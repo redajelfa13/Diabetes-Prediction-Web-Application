@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  transition: background-color 0.4s ease;
+}
+
+.landing-wrapper {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.light-mode {
+  color: #1a1a1a;
+}
+
+body.dark-mode {
+  color: #f0f0f0;
+  background-color: #0d0d0d;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 3rem 4rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header with relative positioning for absolute child */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* padding right to avoid content overlap with absolute button */
+  padding-right: 50px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Settings button as an icon in top-right */
+.settings-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.3s ease;
+}
+
+/* Image inside the settings button */
+.settings-btn img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* Hover effect for light mode */
+.settings-btn:hover img {
+  filter: brightness(1.2);
+}
+
+/* Dark mode tweaks */
+body.dark-mode .glass-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .button-container button {
+  background: linear-gradient(135deg, #bb86fc, #3700b3);
+}
+
+body.dark-mode .button-container button:hover {
+  background: linear-gradient(135deg, #3700b3, #bb86fc);
+}
+
+body.dark-mode .settings-btn img {
+  filter: invert(1);
+}
+
+body.dark-mode .settings-btn:hover img {
+  filter: invert(0.8) brightness(1.2);
+}
+
+.tagline {
+  margin: 1rem 0 2rem;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-container button {
+  padding: 0.8rem 1.6rem;
+  border-radius: 16px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+.button-container button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+body.dark-mode .button-container button {
+  background: linear-gradient(135deg, #bb86fc, #3700b3);
+}
+
+body.dark-mode .button-container button:hover {
+  background: linear-gradient(135deg, #3700b3, #bb86fc);
+}
+
+/* Dark overlay to dim background in dark mode */
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logout-button {
+  margin-top: 2rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 16px;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(255, 77, 79, 0.3);
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.logout-button:hover {
+  background: #d9363e;
+}
